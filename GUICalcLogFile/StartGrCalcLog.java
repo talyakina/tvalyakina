@@ -31,7 +31,6 @@ public class StartGrCalcLog {
 
 		String path = new File("").getAbsolutePath();
 		File file = new File(path + "\\ENTER.txt");
-
 		FileWriter writer = new FileWriter(path + "\\ENTER.txt");
 		String text = "LP";
 		writer.write(text);
