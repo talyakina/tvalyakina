@@ -50,7 +50,7 @@ public class StartGrCalc {
 		JButton butRes = new JButton("=");
 		JButton butDel = new JButton("C");
 		JButton butDelAl = new JButton("CE");
-		JButton butTEST = new JButton(".");
+		
 		
 		//JPanel southPanel = new JPanel();
 		resultText = new JTextArea("Результат");
@@ -75,7 +75,7 @@ public class StartGrCalc {
 		topPanel.add(butRes);
 		topPanel.add(butDel);
 		topPanel.add(butDelAl);
-		topPanel.add(butTEST);
+		
 		
 		myWindow.setVisible(true);
 		
@@ -100,12 +100,7 @@ public class StartGrCalc {
             	northField.setText(s+'1');            	
             }
 		});
-		butTEST.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {            	
-            	String s = northField.getText();
-            	northField.setText(s+'.');            	
-            }
-		});
+		
 		butDelAl.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {            	        
             	northField.setText("");
