@@ -29,14 +29,14 @@ public class StartGrCalcLog {
 
 	public static void main(String[] args) throws IOException {
 
-		String path = new File("").getAbsolutePath();//указывается путь, где лежат файлы (в src)
-		File file = new File(path + "\\ENTER.txt");//создали файл с именем
+		String path = new File("").getAbsolutePath();
+		File file = new File(path + "\\ENTER.txt");
 
 		FileWriter writer = new FileWriter(path + "\\ENTER.txt");
 		String text = "LP";
-		writer.write(text);//записали в первый файл
-		writer.flush();//для перезаписи
-		writer.close();//закрываем потом 
+		writer.write(text);
+		writer.flush();
+		writer.close(); 
 		System.out.println("Enter the login");
 		Scanner sc = new Scanner(System.in);
 		String enter = sc.nextLine();
@@ -44,11 +44,11 @@ public class StartGrCalcLog {
 		String path2 = new File("").getAbsolutePath();
 		File file2 = new File(path2 + "\\ENTERUSER.txt");
 		FileWriter writer1 = new FileWriter(path2 + "\\ENTERUSER.txt");
-		writer1.write(enter);//записали во второй файл
+		writer1.write(enter);
 		writer1.flush();
 		writer1.close();
 		  
-		BufferedReader reader = new BufferedReader(new FileReader(path + "\\ENTER.txt"));// поток для чтения   
+		BufferedReader reader = new BufferedReader(new FileReader(path + "\\ENTER.txt"));
         String s = " ";
         while (s != null) {
             s = reader.readLine();
@@ -59,11 +59,10 @@ public class StartGrCalcLog {
        while (s2 != null) {
             s2 = reader.readLine();
        }      
-      		if (s.equals(s2)) {//Нужно сравнить не объекты, а значения-поэтому метод equals. 
-      							//НО НЕ работает,не разобралась почему.
+      		if (s.equals(s2)) {//it doesnt work/ Why?
 
 			final Logger log = Logger.getLogger(StartGrCalcLog.class);
-			JFrame myWindow = new JFrame("Калькулятор");
+			JFrame myWindow = new JFrame("ГЉГ Г«ГјГЄГіГ«ГїГІГ®Г°");
 			myWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			myWindow.setSize(300, 330);
 
@@ -97,7 +96,7 @@ public class StartGrCalcLog {
 			JButton butDel = new JButton("C");
 			JButton butDelAl = new JButton("CE");
 
-			resultText = new JTextArea("Результат");
+			resultText = new JTextArea("ГђГҐГ§ГіГ«ГјГІГ ГІ");
 			resultText.setPreferredSize(new Dimension(100, 50));
 			resultText.setEditable(false);
 			mainPanel.add(resultText, BorderLayout.SOUTH);
