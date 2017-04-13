@@ -3,9 +3,7 @@
 	public class Triangle implements Figure{
 	    private int a, b, c, h;
 
-	   // public Triangle(int a, int b, int c, int h) {
-	  //      setTriangle(a, b, c, h);
-	   // }
+	  
 
 	    public void setTriangle(int a, int b, int c, int h)  {
 	        this.a = a;
