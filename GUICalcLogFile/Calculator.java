@@ -1,15 +1,17 @@
 package calc;
 
-import org.apache.log4j.Logger;
+import java.util.logging.Logger;
+
+
 
 public class Calculator {
 	private String expression;
 	private String polishExp;
 	private Logger log;
 	
-	public Calculator(String exp, Logger log){
+	public Calculator(String exp/*, Logger log*/){
 		expression = exp;
-		this.log = log;
+		//this.log = log;
 	}
 	
 	public void setExpression(String exp){
@@ -22,7 +24,7 @@ public class Calculator {
 	
 	public boolean check(){
 		boolean checkFlag = true;
-		char[] goodSymbols = {'0', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '-', '+', '/', '*'};
+		char[] goodSymbols = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '-', '+', '/', '*'};
 
 		Stack stack = new Stack();
 		int i = 0;
@@ -32,7 +34,7 @@ public class Calculator {
 			 do{
 				 if (j == goodSymbols.length-1){
 					 checkFlag = false;
-					 log.debug("Expression contains wrong symbol");
+					 log.info("Expression contains wrong symbol");
 				 }else{
 					 j++;
 				 }
@@ -58,21 +60,21 @@ public class Calculator {
 		}
 	}
 	
-	public void polishString()throws Exception{//метод польской записи
+	public void polishString()throws Exception{//пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 		Stack forPolish = new Stack();
 		polishExp = "";
 		for(int i = 0; i < expression.length(); i++){
 			String helpStr = "";
 			char symb = expression.charAt(i);
 			do{
-				if(symb!= '+' && symb != '-' && symb != '/' && symb!= '*'){//если пришла цифра
-					helpStr += symb;//записываем во вспомогательную переменную
+				if(symb!= '+' && symb != '-' && symb != '/' && symb!= '*'){//пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+					helpStr += symb;//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 					i++;
 					if(i < expression.length()){
 						symb = expression.charAt(i);
 					}
 				}				
-			}while(i < expression.length() && symb!= '+' && symb != '-' && symb != '/' && symb!= '*' );//продолжаем, пока не придет цифра
+			}while(i < expression.length() && symb!= '+' && symb != '-' && symb != '/' && symb!= '*' );//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 			
 			if(helpStr.isEmpty() == false){
 				int element = Integer.parseInt(helpStr);
@@ -146,9 +148,9 @@ public class Calculator {
 			boolean findSign = false;
 			char symb = polishExp.charAt(i);
 			do{
-				if(symb== '+'|| symb == '-' || symb== '/' || symb== '*'){//если знак
+				if(symb== '+'|| symb == '-' || symb== '/' || symb== '*'){//пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 					findSign = true;
-				}else{//если цифра
+				}else{//пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 					if(symb !=','){
 					helpStr += symb;					
 					i++;

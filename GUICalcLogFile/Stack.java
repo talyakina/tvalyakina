@@ -2,7 +2,7 @@ package calc;
 
 public class Stack {
 		public static final int CAPACITY = 1000; 
-			private int capacity; 
+		private int capacity; 
 		private Object arr[]; 
 				private int top = -1;
 		public Stack() { 
