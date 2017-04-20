@@ -9,9 +9,9 @@ public class Calculator {
 	private String polishExp;
 	private Logger log;
 	
-	public Calculator(String exp/*, Logger log*/){
+	public Calculator(String exp, Logger log){
 		expression = exp;
-		//this.log = log;
+		this.log = log;
 	}
 	
 	public void setExpression(String exp){
