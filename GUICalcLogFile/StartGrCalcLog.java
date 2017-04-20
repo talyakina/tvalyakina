@@ -38,9 +38,9 @@ public class StartGrCalcLog {
 
 	public static void main(String[] args) throws IOException {		
 		
-//LogManager.getLogManager().readConfiguration(StartGrCalcLog.class.getResourceAsStream("/logging.properties"));
+LogManager.getLogManager().readConfiguration(StartGrCalcLog.class.getResourceAsStream("/logging.properties"));
 
-		//final Logger log = Logger.getLogger(StartGrCalcLog.class.getName());
+		final Logger log = Logger.getLogger(StartGrCalcLog.class.getName());
 		JFrame forRegistration = new JFrame("Calculator");
 		forRegistration.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		forRegistration.setSize(400, 200);
@@ -173,7 +173,7 @@ public class StartGrCalcLog {
 									resultText.setText(String.valueOf(result));
 
 								} catch (Exception ex) {
-									//log.log(Level.SEVERE, "Exception: ", ex);									
+									log.log(Level.SEVERE, "Exception: ", ex);									
 								}
 							}
 						});
@@ -181,7 +181,7 @@ public class StartGrCalcLog {
 							public void actionPerformed(ActionEvent e) {
 								String s = northField.getText();
 								northField.setText(s + '1');
-								//log.info("Button1 has been pushed. Result=" + s + '1');
+								log.info("Button1 has been pushed. Result=" + s + '1');
 							}
 						});
 
